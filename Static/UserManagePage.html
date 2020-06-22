@@ -5,34 +5,10 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>User Management</title>
+    <link rel="stylesheet" href="../Static/resources/Style_2.css" type="text/css">
 
-    <style>
-   .one {
-     background: darkgrey;
-     text-align: center;
-     margin-bottom: 30px;
-   }
-
-   table {
-     width: 100%;
-     
-
-   }
-
-   th {
-     background: gray;
-   }
-
-   table, th, td, tr{
-     border: 1px solid black;
-   }
-
-   td {
-     text-align: center;
-   }
-
-    </style>
+    <script src="../Static/resources/Function.js" type="text/javascript"></script>
 </head>
 <body>
     
@@ -47,12 +23,15 @@
 
         <table>
             <tr>
+                <td colspan="6" align="center"><button type="Submit" name="Submit" value="Submit" onClick="addConfirm()" class="block5">Add User</button></td>
+            </tr>
+            <tr>
               <th>ID</th>
               <th>User Name</th>
               <th>Email Address</th>
               <th>Telephone Number</th>
               <th>Number of Passages</th>
-              <th>Operations</th>
+              <th>Management</th>
 
             </tr>
             <tr>
@@ -61,7 +40,7 @@
               <td>One@gmail.com</td>
               <td>111-111-1111</td>
               <td>5</td>
-              <td><button>Reset User</button>  <button>Delete User</button></td>
+              <td><button style="cursor:pointer;" class="block6" onClick="editConfirm()">Edit User</button><button style="cursor:pointer;" onClick="delConfirm()" class="block7">Delete User</button></td>
                 
             </tr>
             <tr>
@@ -70,7 +49,7 @@
                 <td>Two@gmail.com</td>
                 <td>222-222-2222</td>
                 <td>3</td>
-                <td><button>Reset User</button>  <button>Delete User</button></td>
+                <td><button style="cursor:pointer;" onClick="editConfirm()" class="block6">Edit User</button><button style="cursor:pointer;" onClick="delConfirm()" class="block7">Delete User</button></td>
               </tr>
            
           </table>
