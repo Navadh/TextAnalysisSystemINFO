@@ -6,6 +6,14 @@
 
 
     <link rel="stylesheet" href="../Static/resources/style.css" type="text/css">
+    <script type="text/javascript">
+        function F_Open_dialog()
+        {
+            document.getElementById("btn_file").click();
+        }
+    </script>
+
+
 </head>
 <body>
 
@@ -28,18 +36,19 @@
 <table border="1px" width="100%" cellpadding="0" cellspacing="0">
     <tr>
         <td align="center" background="resources/images/logintop.jpg">choose:</td>
-        <td align="center" background="resources/images/logintop.jpg"><input type="button" value="submit" name="submit"id="submit" class="btnQQ"></td>
+        <td align="center" background="resources/images/logintop.jpg">
+            <div>
+    <input type="file" id="btn_file" style="display:none">
+    <button type="button" value="submit" name="submit"id="submit" class="btnQQ" onclick="F_Open_dialog();">submit</button>
+</div>
+
+        </td>
     </tr>
 </table>
 
 
 
 
-
-
-
-
-<!--<iframe src="Main01.html" frameborder="0" height="500px" width="800px"></iframe>-->
 
 
 <aside align="right">
@@ -51,7 +60,7 @@
                     <td bgcolor="#87cefa" align="center">user name</td>
                     <td bgcolor="#87cefa" align="center">passage type</td>
                     <td bgcolor="#87cefa" align="center">passage name</td>
-                    <td bgcolor="#87cefa" align="center">operate</td>
+                    <td bgcolor="#87cefa" align="center">operation</td>
                 </tr>
                 <tr>
                     <td align="center"> 2020/06/18  </td>
@@ -62,8 +71,8 @@
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="center" >
-                                    <input type="button" value="add"    name="add"   id="add"    class="btnQQ">
-                                    <input type="button" value="delete" name="submit"id="delete" class="btnQQ">
+
+                                    <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">
                                 </td>
                             </tr>
                         </table>
