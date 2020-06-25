@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'TextAnalysisSystem3.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'tasdb'),
+            'NAME': 'tasdb',
             'USER': 'root',
             'PASSWORD': 'NavINFO5717TX',
             'HOST': '127.0.0.1',
@@ -125,4 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/Static/'
+STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'Static'),
+)
