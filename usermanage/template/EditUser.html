@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Edit User</title>
+        <style type="text/css">
+            body {
+                margin-left: 2px;
+                margin-top: 2px;
+                margin-right: 2px;
+                margin-bottom: 0px;
+                font-family: "宋体";
+                font-size: 12px;
+            }
+        .STYLE1 {color: #FF0000}
+        </style>
+    </head>
+
+    <body style="overflow-y:auto;overflow-x:hidden; overflow-y:auto" >
+    
+    <div></div>
+        <table border="0" cellpadding="0" cellspacing="0" id="divbox" style="position:absolute;display:none;z-index:2000;">
+            <tr>
+                <td colspan="2" id="divtitle" style="float:left;font-size: 12px;">&nbsp;</td>
+                <td align="right"><img src="images/close3.gif" style="cursor:pointer" width="20" height="20" onClick="disdivbox();" >&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="1057" colspan="3" > <iframe src='' id="contentframes" name="contentframes" frameborder='0'></iframe></td>
+            </tr>
+        </table>
+    <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0" >
+    <form method="POST" action="">
+      <tr >
+        <td  width="20%" height="30" align="right" bgcolor="#778899" >Old Username:</td>
+        <td width="80%">&nbsp;
+            <input name="oldusername" type="text" id="oldusername" value="">
+        &nbsp;
+
+     </tr>
+        <td  width="20%" height="30" align="right" bgcolor="#778899">New Username:</td>
+        <td width="80%">&nbsp;
+
+        <input name="newusername" type="text" id="newusername" value="">
+        &nbsp;
+
+<input name="button2" type="submit" id="button2" value="Submit"> </td>
+      </tr>
+    </form>
+    </table>
+    </body>
+</html>
