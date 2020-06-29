@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset="UTF-8">
     <title>Reset</title>
+      <link rel="stylesheet" href="inc/Style_2.css" type="text/css">
+
   </head>
   <body>
-    <table style="width: 100%;" border="0">
-      <tbody>
-        <tr>
-          <td colspan="3" bgcolor="#AFEEEE">Password Reset<br>
-          </td>
-        </tr>
-        <tr>
-          <td width="15" bgcolor="#AFEEEE"><br>
-          </td>
-          <td>
-            <table style="width: 100%" border="0">
-              <tbody>
-                <tr>
-                  <td style="width: 21.8px;" bgcolor="#E0FFFF" align="right">Username:</td>
-                  <td style="width: 287.2px;"><input name="username" type="text"><br>
-                  </td>
-                </tr>
-                <tr>
-                  <td bgcolor="#E0FFFF" align="right">Email:</td>
-                  <td><input name="Email" type="email"><br>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2" align="center">
+      <div id="container">
+            <div id="header">
+                <h1> Text Analysis System </h1></div>
+            <div id="content">
+                <h2>Reset Password</h2>
+                <form action="Login.html" target="_blank">
+                <table id="users">
+                    <tbody>
+                    <tr>
+                    <td style="width: 21.8px;" class="username" >Username:</td>
+                    <td style="width: 287.2px;"><input name="username" type="text" placeholder="username"><br>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="email">Email:</td>
+                    <td><input name="Email" type="email" placeholder="email@abc.com"><br>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="dob">DOB:</td>
+                    <td><input name="Email" type="email" placeholder="mm/dd/yyyy"><br>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center"><button name="Reset" type="reset" formmethod="post" class="reset">Reset</button></td>
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center"><button name="Return" type="submit" formmethod="post" class="return">Return to Login page</button></td>
 
-                        <button name="Reset" type="reset" formmethod="post">Reset</button></td>
-                </tr>
-                <tr>
-                  <td colspan="2" align="center">
+                    </tr>
+                    <tr>
+                    <td colspan="2" align="center" class="link">Please check your email for the password reset link</td>
+                    </tr>
+                </tbody>
+                </table>
+                </form><br>
 
-                        <form action="Login.html" target="_blank"><button
-
-                          name="Return" type="submit" formmethod="post">Return to Login page</button></form></td>
-
-                </tr>
-              <tr>
-                <td colspan="2" align="center"><i>Please check your email for the password reset link</i></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td width="15" bgcolor="#AFEEEE"><br>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3" bgcolor="#AFEEEE"><br>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p><br>
-    </p>
-    <p><br>
-    </p>
-
-  </body>
+        </div>
+      </div>
+    </body>
 </html>
+
+
+
+
+
