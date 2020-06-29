@@ -1,147 +1,98 @@
-.block1 {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #FFA07A;
-  color: white;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block2 {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #808000;
-  color: white;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block3 {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #87CEFA;
-  color: white;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block4 {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #778899;
-  color: white;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
+body {
+              background-color: #e4edf3;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+          a {
+              text-decoration: none;
+              color:red;
+          }
+          a:hover {
+              color: blue;
+          }
+          h2 {
+              text-align: left;
+              color:darkgray;
+          }
+          #header {
+              background-color: #c0c4e4;
+              color: white;
+              text-align: center;
+              padding: 10px;
+              margin: 0px;
+          }
+          #content {
+              padding: 10px;
+          }
+          #content .username, #content .password, #content .email, #content .dob, #content .adduser, #content .oldusername, #content .newusername {
+              background-color: #aecadc;
+              text-align: right;
+              color: dimgray;
+          }
+          #users {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
 
-.one {
-     background: darkgrey;
-     text-align: center;
-     margin-bottom: 30px;
-   }
-   .block5 {
-  display: block;
-  width: 10%;
-  border: none;
-  background-color: #708090;
-  color: white;
-  padding: 1px 8px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block6 {
-  display: block;
-  width: 70%;
-  border: none;
-  background-color: #696969;
-  color: white;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block7 {
-  display: block;
-  width: 70%;
-  border: none;
-  background-color: #778899;
-  color: white;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-.block8 {
-  display: block;
-  width: 50%;
-  border: none;
-  background-color: #778899;
-  color: white;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-    body {
-        background: #C0C0C0;
+            #users td, #users th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+          #users .submit {
+            color: white;
+            background-color: #13a4a4;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+            }
+        #users .return {
+            color: white;
+            background-color: #985a51;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+            }
+        #users .reset {
+            color: white;
+            background-color: #FE9788;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+            }
+
+
+            #users tr:nth-child(even){background-color: #f2f2f2;}
+
+            #users tr:hover {background-color: #ddd;}
+        .link {
+            color: dimgray;
+            font-style: italic;
         }
-   table {
-     width: 100%;
-
-
-   }
-
-   th {
-     background: gray;
-   }
-
-
-   table, th, td, tr{
-
-     border: 1px solid black;
-   }
-
-   td {
-     text-align: center;
-   }
-   .indextab {
-   width: 100%;
-   border: none;
-   }
-   .indextd {
-   align: center;
-   height: 50%;
-   }
-.logintab {
-width: 100%;
-border: none;
-}
-.logintd {
-backgroound: #E8EFF;
-}
-
-.tabtd {
-background: #D7E9EC;
-aligh:right;
-}
-
-.block-title{
-	color: #083772;
-	font-weight: bold;
-	padding: 2px;
-	padding-left: 4px;
-}
-.block-body{
-	padding:4px;
-	padding-top:2px;
-}
+        .button_um {
+            color: white;
+            background-color: #7fbf7f;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        .button_ta {
+            color: white;
+            background-color: #d29494;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        .button_tm {
+            color: white;
+            background-color: #cccc00;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+        .logout {
+            color: white;
+            background-color: #ff7f7f;
+            padding: 5px;
+            border-radius: 2px;
+            text-decoration: none;
+        }

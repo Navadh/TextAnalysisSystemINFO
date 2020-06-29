@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset="UTF-8">
     <title>Text Analysis System Login</title>
-
+      <link rel="stylesheet" href="inc/Style_2.css" type="text/css">
   </head>
   <body>
-    <table style="width: 100%;" border="0">
-      <tbody>
-        <tr>
-          <td colspan="3" bgcolor="#E8EFF">Text Analysis System Login<br>
-          </td>
-        </tr>
-        <tr>
-          <td width="15" bgcolor="#E8EFF"><br>
-          </td>
-          <td>
-            <table style="width: 100%" border="0">
-              <tbody>
-                <tr>
-                  <td style="width: 21.8px;" bgcolor="#D7E9EC" align="right">Username:</td>
-                  <td style="width: 287.2px;"><input name="username" type="text"><br>
-                  </td>
-                </tr>
-                <tr>
-                  <td bgcolor="#D7E9EC" align="right">Password:</td>
-                  <td><input name="password" type="password"><br>
-                  </td>
-                </tr>
+      <div id="container">
+            <div id="header">
+                <h1> Text Analysis System </h1></div>
+            <div id="content">
+                <h2>Login</h2>
+                <form action="Main_1.html" target="_blank">
+                        <table id="users">
+                        <tbody>
+                            <tr>
+                            <td style="width: 21.8px;" class="username" >Username:</td>
+                            <td style="width: 287.2px;"><input name="username" type="text" placeholder="username"><br></td>
+                            </tr>
+                            <tr>
+                            <td class="password">Password:</td>
+                            <td><input name="password" type="password" placeholder="password"><br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center"><button name="Submit" type="submit" formmethod="post" class="submit">Submit</button></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2" align="center"><a href="Reset.html" title="Forgot password">Forgot your password?</a></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            </form><br>
 
-                <tr>
-                  <td colspan="2" align="center"><form action="Main_1.html" target="_blank"><button name="Submit" type="submit"
-
-                                                                                                        formmethod="post">Submit</button></form><br>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2" align="center"><a href="Reset.html" title="Forgot password or username">Forgot
-                      your password?</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <td width="15" bgcolor="#E8EFF"><br>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3" bgcolor="#E8EFF"><br>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p><br>
-    </p>
-    <p><br>
-    </p>
-  </body>
+        </div>
+      </div>
+    </body>
 </html>
