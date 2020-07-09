@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'TextAnalysisSystem3.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'tasdb',
+            'NAME': 'pydb',
             'USER': 'root',
-            'PASSWORD': 'NavINFO5717TX',
-            'HOST': '127.0.0.1',
+            'PASSWORD': 'aichou123@AICHOU123',
+            'HOST': '118.24.85.183',
             'PORT': '3306'
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
