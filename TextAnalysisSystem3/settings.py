@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usermanage',
-
+    'TextManage',
 
 ]
 
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'TextAnalysisSystem3.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'pydb',
+            'NAME': 'tasdb',
             'USER': 'root',
             'PASSWORD': 'aichou123@AICHOU123',
             'HOST': '118.24.85.183',
