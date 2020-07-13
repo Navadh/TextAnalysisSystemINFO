@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usermanage',
-
+    'TextManage',
 
 ]
 
@@ -82,8 +82,8 @@ DATABASES = {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'tasdb',
             'USER': 'root',
-            'PASSWORD': 'NavINFO5717TX',
-            'HOST': '127.0.0.1',
+            'PASSWORD': 'aichou123@AICHOU123',
+            'HOST': '118.24.85.183',
             'PORT': '3306'
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
