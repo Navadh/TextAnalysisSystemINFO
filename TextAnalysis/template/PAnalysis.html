@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="rowOne">
+            <div class="col 6" style="background-color:lightgray; text-align: center; padding: 10px; margin-bottom: 20px;">
+                    <h1>Passage Analysis</h1>
+            </div>
+
+
+        </div>
+
+        <div class="rowTwo">
+
+            <div class="col 6">
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Select a Passage
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" id="one" value="one" onclick="displayPassageOne(); displayGraph(); showDownloadButton(); this.onclick=null;">Passage One</a>
+                      <a class="dropdown-item" id="two" value ="two" onclick="displayPassageTwo()">Passage Two</a>
+                      <a class="dropdown-item" id="three" value="three" onclick="displayPassageThree()">Passage Three</a>
+                    </div>
+                  </div>
+
+                  <div class="col 6">
+                      <p id="selectedPassage">
+
+                      </p>
+
+                      <p id="passageContent">
+
+                      </p>
+                  </div>
+
+        </div class = "rowThree">
+
+            <div class="col 6">
+                    <p id="graphDisplay" style="height: 300px; width: 100%;"></p>
+
+            </div>
+        </div>
+
+        <div class="rowFour">
+            <div class="col"></div>
+            <div class="col" id ="downloadButton"></div>
+            <div class="col">
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+      var passageOne= "Passage one: Borrowers complained about several aspects -- from inflexible late fees and interest charges, to refusals to provide assistance for those with financial hardships.";
+
+        var passageTwo = "Passage two: A spokesperson for Facebook, which owns Instagram, told CNN that the company was investigating. We do not allow content or behaviour on Instagram that may lead to human exploitation, which includes the sale of children for illegal adoption.";
+
+       var passageThree = "Passage three: The challenges we face as a community, state, and country are immense, and they have grown only more immediate with the spread of the coronavirus, the tragic deaths of nearly 125,000 Americans and the incredibly harmful impacts this virus has had on our economy "
+
+
+        function displayPassageOne(){
+            document.getElementById("selectedPassage").innerHTML=passageOne;
+
+        }
+
+        function displayPassageTwo(){
+            document.getElementById("selectedPassage").innerHTML=passageTwo;
+        }
+
+        function displayPassageThree(){
+            document.getElementById("selectedPassage").innerHTML=passageThree;
+        }
+
+
+       //------------------graph using CanvasJS--------
+
+    function displayGraph() {
+	var chart = new
+    CanvasJS.Chart("graphDisplay", {
+		title:{
+			text: "The Result"
+		},
+		data: [
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "column",
+			dataPoints: [
+				{ label: "wordOne",  y: 2  },
+				{ label: "wordTwo", y: 5 },
+				{ label: "wordThree", y: 6  },
+				{ label: "wordFour",  y: 9  },
+				{ label: "wordFive",  y: 3  }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+//--------------- show download button to download the passage------
+
+function showDownloadButton() {
+    var x = document.createElement("BUTTON");
+  var t = document.createTextNode("Download");
+  var att = document.createAttribute("href");
+var att2 = document.createAttribute("id");
+// var att3 = document.createAttribute("download")
+
+t.value=
+att.value="passage1.txt";
+att2.value = "downloadButtId";
+// att3.value = "passage1.txt"
+
+
+
+    x.setAttributeNode(att);
+    x.setAttributeNode(att2);
+    // x.setAttributeNode(att3);
+
+
+
+  x.appendChild(t);
+
+  document.body.appendChild(x);
+
+
+//------
+
+var a = document.getElementById("downloadButtId");
+a.href = "passage1.txt";
+
+
+}
+
+
+
+    </script>
+</body>
+</html>

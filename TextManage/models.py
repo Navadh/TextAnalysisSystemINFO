@@ -10,6 +10,7 @@ class TextMange(models.Model):
     updatetime=models.DateTimeField()
     ptype=models.CharField(max_length=45)
     pname=models.CharField(max_length=45)
+    pid=models.IntegerField()
 
 
     class Meta:
