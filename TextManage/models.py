@@ -11,8 +11,6 @@ class TextMange(models.Model):
     ptype=models.CharField(max_length=45)
     pname=models.CharField(max_length=45)
 
-
-
     class Meta:
         db_table="TTextManage"
 
