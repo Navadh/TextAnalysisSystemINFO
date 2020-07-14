@@ -469,20 +469,20 @@ aliens = []
 #
 # for topping in pizza['toppings']:
 #     print("\t" + topping)
-class Critter:
-    def __init__(self, name):
-        print("A new Critter has been born!")
-        self.name = name
-    def __str__(self):
-        rep = "Critter Object\n"
-        rep +="Name: " + self.name + "\n"
-        return rep
-    def talk(self):
-        print("Hi! I'm", self.name, '\n')
-crit = Critter("Rudolph")
-crit.talk()
-print("Printing crit:")
-print(crit)
-print("Directly accessing crit.name:")
-print(crit.name)
-input("\n\nPress any key to exit")
+# class Critter:
+#     def __init__(self, name):
+#         print("A new Critter has been born!")
+#         self.name = name
+#     def __str__(self):
+#         rep = "Critter Object\n"
+#         rep +="Name: " + self.name + "\n"
+#         return rep
+#     def talk(self):
+#         print("Hi! I'm", self.name, '\n')
+# crit = Critter("Rudolph")
+# crit.talk()
+# print("Printing crit:")
+# print(crit)
+# print("Directly accessing crit.name:")
+# print(crit.name)
+# input("\n\nPress any key to exit")
