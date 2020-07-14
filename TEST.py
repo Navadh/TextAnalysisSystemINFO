@@ -486,3 +486,5 @@ aliens = []
 # print("Directly accessing crit.name:")
 # print(crit.name)
 # input("\n\nPress any key to exit")
+
+some test
