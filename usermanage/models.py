@@ -9,3 +9,5 @@ class TUser(models.Model):
     class Meta:
         db_table="TUser"
 
+    def __str__(self):
+        return self.username

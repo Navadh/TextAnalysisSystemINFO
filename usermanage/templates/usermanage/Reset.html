@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset="UTF-8">
     <title>Reset</title>
-      <link rel="stylesheet" href="../../Static/inc/Style_2.css" type="text/css">
+      <link rel="stylesheet" href="{% static 'inc/Style_2.css' %}" type="text/css">
 
   </head>
   <body>
@@ -12,7 +13,9 @@
                 <h1> Text Analysis System </h1></div>
             <div id="content">
                 <h2>Reset Password</h2>
-                <form action="Login.html" target="_blank">
+                <form action="/usermanage/login" method="POST" target="_blank">
+                                        {% csrf_token %}
+
                 <table id="users">
                     <tbody>
                     <tr>

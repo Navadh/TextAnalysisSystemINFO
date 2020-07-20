@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset="UTF-8">
     <title>Text Analysis System Login</title>
-      <link rel="stylesheet" href="../../Static/inc/Style_2.css" type="text/css">
+      <link rel="stylesheet" href="{% static 'inc/Style_2.css' %}" type="text/css">
   </head>
   <body>
       <div id="container">
@@ -11,7 +12,8 @@
                 <h1> Text Analysis System </h1></div>
             <div id="content">
                 <h2>Login</h2>
-                <form action="Main_1.html" target="_blank">
+                <form action="/usermanage/loginaction" method="POST" target="_blank">
+                    {% csrf_token %}
                         <table id="users">
                         <tbody>
                             <tr>
