@@ -13,9 +13,8 @@
                 <h1> Text Analysis System </h1></div>
             <div id="content">
                 <h2>Reset Password</h2>
-                <form action="/usermanage/login" method="POST" target="_blank">
+                <form action="" method="POST" target="_blank">
                                         {% csrf_token %}
-
                 <table id="users">
                     <tbody>
                     <tr>
@@ -30,14 +29,21 @@
                     </tr>
                     <tr>
                     <td class="dob">DOB:</td>
-                    <td><input name="Email" type="email" placeholder="mm/dd/yyyy" required><br>
+                    <td><input name="DOB" type="dob" placeholder="mm/dd/yyyy" required><br>
                     </td>
                     </tr>
                     <tr>
                     <td colspan="2" align="center"><button name="Reset" type="reset" formmethod="post" class="reset">Reset</button></td>
                     </tr>
+                    </tbody>
+                </table>
+                </form><br>
+                <form action="/usermanage/login" method="POST" target="_blank">
+                                        {% csrf_token %}
+		        <table id="users">
+                    <tbody>
                     <tr>
-                    <td colspan="2" align="center"><button name="Return" type="submit" formmethod="post" class="return">Return to Login page</button></td>
+			        <td colspan="2" align="center"><button name="Return" type="submit" formmethod="post" class="return">Return to Login page</button></td>
 
                     </tr>
                     <tr>
@@ -45,7 +51,7 @@
                     </tr>
                 </tbody>
                 </table>
-                </form><br>
+                </form>
 
         </div>
       </div>
