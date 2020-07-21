@@ -44,4 +44,5 @@ def addUser(request):
     if request.method=='POST':
         new_user = TUser()
         new_user.username = request.POST.get('addusername')
+        new_user.userpwd = request.POST.get('addpassword')
         new_user.save()
