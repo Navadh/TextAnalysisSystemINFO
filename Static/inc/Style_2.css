@@ -26,7 +26,7 @@ body {
               padding: 10px;
               margin: 0px;
           }
-          #content .username, #content .password, #content .email, #content .dob, #content .adduser, #content .oldusername, #content .newusername {
+          #content .username, #content .password, #content .email, #content .dob, #content .adduser, #content .oldusername, #content .newusername, #content .addpwd  {
               background-color: #aecadc;
               text-align: right;
               color: dimgray;
@@ -135,3 +135,4 @@ body {
                 background-color: #4CAF50;
                 color: white;
             }
+
