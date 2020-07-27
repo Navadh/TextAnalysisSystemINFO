@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 import usermanage.views as userview
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+import TextManage.views as TextManageview
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usermanage/', include('usermanage.urls')),
     # path('user/login', userview.loginView),
+    path('TextManage/', include('TextManage.urls')),
+
 
 ]
 

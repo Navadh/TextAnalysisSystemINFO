@@ -14,3 +14,6 @@ class TextMange(models.Model):
     class Meta:
         db_table="TTextManage"
 
+
+
+
