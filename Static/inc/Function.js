@@ -13,7 +13,7 @@ function addConfirm() {
             var con=confirm("Are you sure to you want to add new user?");
                 if (con==true)
                     {
-                    window.open("AddUser.html", "main");
+                    window.open(url="/usermanage/useradd", "main");
                     }
                 else
                     alert('No!');
