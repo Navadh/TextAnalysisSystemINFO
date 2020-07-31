@@ -134,3 +134,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'Static'),
 
 )
+
+X_FRAME_OPTIONS = 'ALLOWALL url'
