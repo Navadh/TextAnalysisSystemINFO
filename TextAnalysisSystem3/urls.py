@@ -27,8 +27,6 @@ urlpatterns = [
     path('usermanage/', include('usermanage.urls')),
     # path('user/login', userview.loginView),
     path('TextManage/', include('TextManage.urls')),
-
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()

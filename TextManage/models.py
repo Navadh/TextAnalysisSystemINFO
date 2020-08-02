@@ -17,3 +17,5 @@ class TextMange(models.Model):
 
 
 
+
+

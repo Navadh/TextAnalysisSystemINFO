@@ -59,7 +59,7 @@ ROOT_URLCONF = 'TextAnalysisSystem3.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,6 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
+# LANGUAGE_CODE = 'zh-hans'
+#
+# TIME_ZONE = 'Asia/Shanghai'
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -125,14 +129,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+X_FRAME_OPTIONS = "ALLOWALL url"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/Static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'Static'),
+    os.path.join(BASE_DIR, 'Static/'),
 
 )
 
-X_FRAME_OPTIONS = 'ALLOWALL url'
+

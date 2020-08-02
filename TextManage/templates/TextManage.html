@@ -36,12 +36,14 @@
 <table border="1px" width="100%" cellpadding="0" cellspacing="0">
     <tr>
         <td align="center" background="/Static/images/logintop.jpg">choose:</td>
-        <td align="center" background="/Static/images/logintop.jpg">
-            <div>
-    <input type="file" id="btn_file" style="display:none">
-    <button type="button" value="submit" name="submit"id="submit" class="btnQQ" onclick="F_Open_dialog();">submit</button>
-</div>
 
+        <td align="center" background="/Static/images/logintop.jpg">
+            <form action="/TextManage/upload" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="f1" id="btn_file" style="cursor:pointer">
+    <button >submit</button>
+
+                </form>
         </td>
     </tr>
 </table>
@@ -62,11 +64,13 @@
                     <td bgcolor="#87cefa" align="center">passage name</td>
                     <td bgcolor="#87cefa" align="center">operation</td>
                 </tr>
+
+                 {% for i in all_textmanages %}
                 <tr>
-                    <td align="center"> 2020/06/18  </td>
-                    <td align="center">  cui su</td>
-                    <td align="center"> pdf</td>
-                    <td align="center"> first day  </td>
+                    <td align="center">{{ i.updatetime }}</td>
+                    <td align="center">{{ i.userid }}</td>
+                    <td align="center">{{ i.ptype }}</td>
+                    <td align="center">{{ i.pname }}</td>
                     <td>
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
@@ -76,37 +80,11 @@
                                 </td>
                             </tr>
                         </table>
-
                     </td>
                 </tr>
-                <tr>
-                    <td> &nbsp; </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp;  </td>
-                </tr>
-                <tr>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp;</td>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp;   </td>
-                </tr>
-                <tr>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp;</td>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp;   </td>
-                </tr>
-                <tr>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp; </td>
-                    <td> &nbsp;</td>
-                    <td> &nbsp;  </td>
-                    <td> &nbsp;   </td>
-                </tr>
+            {% endfor %}
+
+
             </table>
         </section>
     </table>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
 from usermanage.models import TUser
 
 # Create your views here.
@@ -24,6 +24,7 @@ def indexPage(request):
     return render(request, 'usermanage/Index.html')
 
 def userInfo(request, userid):
+
     print('userid: ', userid)
     return render(request, 'usermanage/Login.html')
 
@@ -35,10 +36,15 @@ def loginInfo(request, username, userpwd):
 def loginAction(request):
     if request.method=='POST':
         username = request.POST.get('username')
-        userpwd = request.POST.get('userpwd')
-        print(username)
-        print(userpwd)
-        return render(request, 'usermanage/Main_1.html')
+        userpwd = request.POST.get('password')
+        ret = TUser.objects.filter(username=username,userpwd=userpwd)
+        if 0 == len(ret):
+            return HttpResponse('User does not exist!')
+        else:
+            global userid
+            userid = ret[0].userid
+            return render(request,'usermanage/Main_1.html',{'userid': userid})
+
 
 def addUser(request):
     if request.method=='POST':
