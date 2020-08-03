@@ -38,10 +38,10 @@
         <td align="center" background="/Static/images/logintop.jpg">choose:</td>
 
         <td align="center" background="/Static/images/logintop.jpg">
-            <form action="/TextManage/upload" method="post" enctype="multipart/form-data">
+            <form action="/TextManage/upload/{{userid}}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
             <input type="file" name="f1" id="btn_file" style="cursor:pointer">
-    <button >submit</button>
+    <button class="btnQQ" >submit</button>
 
                 </form>
         </td>
@@ -75,8 +75,11 @@
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="center" >
+                                    <form action="/TextManage/TextManage/{{ ttextmanageid }}" method="post">
+                                      <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">
+                                    </form>
 
-                                    <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">
+<!--                                    <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">-->
                                 </td>
                             </tr>
                         </table>

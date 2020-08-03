@@ -5,9 +5,8 @@ from . import views
 app_name ='TextManage'
 
 urlpatterns = [
-    path('TextManage', views.TextManageView),
-    path('textlist',views.textlist,name='textlist'),
-    # path('upload',views.Upload),
-    path('upload',views.Upload.as_view(),name='upload')
-    # path('submit',views.textadd,name='submit')
+    path('TextManage/<int:userid>', views.TextManageView),
+    path('textlist',views.textlist),
+    path('upload/<int:userid>',views.Upload.as_view()),
+
 ]

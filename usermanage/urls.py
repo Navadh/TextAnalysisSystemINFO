@@ -2,25 +2,18 @@
 from django.urls import path
 from . import views
 
-app_name = 'usermanage'
+app_name ='usermanage'
 
 urlpatterns = [
-    path('index', views.indexall),
-    path('loginadmin', views.loginviewadmin),
-    path('loginuser', views.loginviewuser),
-    path('<int:userid>', views.userinfoadmin),
-    path('<int:userid>', views.userinfouser),
-    path('<slug:username>/<slug:userpwd>', views.logininfoadmin),
-    path('<slug:username>/<slug:userpwd>', views.logininfouser),
-    path('loginactionadmin', views.loginactionadmin),
-    path('loginactionuser', views.loginactionuser),
-    path('adduser', views.adduser),
-    path('useradd', views.useradd),
-    path('edituser', views.useredit),
-    path('usermanage', views.usermanage),
-    path('reset', views.resetpass),
-    path('sideadmin', views.sideadmin),
-    path('sideuser', views.sideuser),
-    path('mainadmin', views.mainadmin),
-    path('mainuser', views.mainuser),
-    ]
+    path('login', views.loginView),
+    path('<int:userid>',views.userInfo),
+    path('index/<int:userid>', views.indexPage),
+    path('<slug:username>/<slug:userpwd>',views.loginInfo),
+    path('loginaction', views.loginAction),
+    path('adduser', views.addUser),
+    path('useradd', views.userAdd),
+    path('edituser', views.userEdit),
+    path('usermanage', views.userManage),
+    path('reset', views.resetPass),
+    path('main', views.mainPage),
+]

@@ -1,13 +1,20 @@
-           body {
+body {
               background-color: #e4edf3;
               font-family: Arial, Helvetica, sans-serif;
               margin: 0px;
 
           }
-          h1 {
-          font-size: 400%;
+          a {
+              text-decoration: none;
+              color:red;
           }
-
+          a:hover {
+              color: blue;
+          }
+          h2 {
+              text-align: left;
+              color:darkgray;
+          }
           #header {
               background-color: #c0c4e4;
               color: white;
@@ -15,7 +22,6 @@
               padding: 10px;
               margin: 0px;
           }
-
           #content {
               padding: 10px;
               margin: 0px;
@@ -120,6 +126,7 @@
         .indextab td {
             text-align: center;
             height: 50px;
+
         }
         #users th {
                 padding-top: 12px;
