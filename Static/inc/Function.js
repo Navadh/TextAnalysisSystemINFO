@@ -2,7 +2,7 @@ function editConfirm() {
             var con=confirm("Are you sure to you want to edit the user?");
                 if (con==true)
                     {
-                    window.open("EditUser.html", "main");
+                    window.open(url="/usermanage/edituser", "main");
                     }
                 else
                     alert('No!');

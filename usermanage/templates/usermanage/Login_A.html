@@ -11,8 +11,8 @@
             <div id="header">
                 <h1> Text Analysis System </h1></div>
             <div id="content">
-                <h2>Login</h2>
-                <form action="/usermanage/loginaction" method="POST" target="_blank">
+                <h2>Admin Login</h2>
+                <form action="/usermanage/loginactionadmin" method="POST" >
                     {% csrf_token %}
                         <table id="users">
                         <tbody>
@@ -26,9 +26,6 @@
                             </tr>
                             <tr>
                                 <td colspan="2" align="center"><button name="Submit" type="submit" formmethod="post" class="submit">Submit</button></td>
-                            </tr>
-                            <tr>
-                            <td colspan="2" align="center"><a href="/usermanage/reset" title="Forgot password">Forgot your password?</a></td>
                             </tr>
                             </tbody>
                             </table>
