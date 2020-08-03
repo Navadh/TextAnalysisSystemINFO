@@ -20,8 +20,8 @@ def resetPass(request):
 def mainPage(request):
     return render(request, 'usermanage/Main_1.html')
 
-def indexPage(request):
-    return render(request, 'usermanage/Index.html')
+def indexPage(request,userid):
+    return render(request, 'usermanage/Index.html',{'userid' : userid})
 
 def userInfo(request, userid):
 
@@ -41,7 +41,6 @@ def loginAction(request):
         if 0 == len(ret):
             return HttpResponse('User does not exist!')
         else:
-            global userid
             userid = ret[0].userid
             return render(request,'usermanage/Main_1.html',{'userid': userid})
 

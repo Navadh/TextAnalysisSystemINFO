@@ -1,12 +1,13 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from TextManage.models import TextMange
 from django.views import View
+import datetime
 
 
 # Create your views here.
-def TextManageView(request):
+def TextManageView(request,userid):
     all_textmanages = TextMange.objects.all()
-    return render(request,'TextManage.html',{'all_textmanages': all_textmanages})
+    return render(request,'TextManage.html',{'all_textmanages': all_textmanages,'userid':userid})
 
 def textlist(request):
     all_textmanages =TextMange.objects.all()
@@ -17,7 +18,7 @@ class Upload(View):
     def get(self, request):
         return render(request, 'upload.html')
 
-    def post(self, request):
+    def post(self, request,userid):
 
         file = request.FILES.get('f1')
         # 获取文件名后缀
@@ -28,13 +29,15 @@ class Upload(View):
             with open(file.name, 'wb') as f:
                 for i in file:
                     f.write(i)
-            global userid
-            ret = TextMange.objects.create(pname=file.name,userid=userid)
-            print(ret)
-            # return render(request, 'usermanage/Main_1.html', {'userid': userid})
-            return HttpResponse('ok')
+
+            ret = TextMange.objects.create(pname=file.name,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
+            return HttpResponse('OK')
         else:
             return HttpResponse('NO')
 
-    def textadd(request):
-        return render(request,'text_add.html')
+
+        ttextmanageid = request.GET.get('ttextmanageid')
+        TextMange.objects.get(ttextmanageid=ttextmanageid).delete()
+        return render(request,'upload.html',{'ttextmanageid':ttextmanageid})
+
+

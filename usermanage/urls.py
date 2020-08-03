@@ -7,6 +7,7 @@ app_name ='usermanage'
 urlpatterns = [
     path('login', views.loginView),
     path('<int:userid>',views.userInfo),
+    path('index/<int:userid>', views.indexPage),
     path('<slug:username>/<slug:userpwd>',views.loginInfo),
     path('loginaction', views.loginAction),
     path('adduser', views.addUser),
@@ -14,6 +15,5 @@ urlpatterns = [
     path('edituser', views.userEdit),
     path('usermanage', views.userManage),
     path('reset', views.resetPass),
-    path('index', views.indexPage),
     path('main', views.mainPage),
 ]
