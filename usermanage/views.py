@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from usermanage.models import TUser
+from usermanage.models import TUser, TAdmin
 
 # Create your views here.
 
@@ -72,11 +72,14 @@ def logininfouser(request, username, userpwd):
 
 def loginactionadmin(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        userpwd = request.POST.get('userpwd')
-        print(username)
-        print(userpwd)
-        return render(request, 'usermanage/Main_A.html')
+        tadmin_name = request.POST.get('tadmin_name')
+        tadmin_pwd = request.POST.get('tadmin_pwd')
+        ret = TAdmin.objects.filter(tadmin_name=tadmin_name, tadmin_pwd=tadmin_pwd)
+        if 0 == len(ret):
+            return HttpResponse('Either the username or password is not matching or the user does not exist!')
+        else:
+            tadmin_id = ret[0].tadmin_id
+        return render(request, 'usermanage/Main_A.html', {'tadmin_id': tadmin_id})
 
 
 def loginactionuser(request):
@@ -85,7 +88,7 @@ def loginactionuser(request):
         userpwd = request.POST.get('password')
         ret = TUser.objects.filter(username=username, userpwd=userpwd)
         if 0 == len(ret):
-            return HttpResponse('User does not exist!')
+            return HttpResponse('Either the username or password is not matching or the user does not exist!')
         else:
             userid = ret[0].userid
             return render(request, 'usermanage/Main_U.html', {'userid': userid})
