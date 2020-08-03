@@ -7,6 +7,6 @@ app_name ='TextManage'
 urlpatterns = [
     path('TextManage/<int:userid>', views.TextManageView),
     path('textlist',views.textlist),
-    path('upload/<int:userid>/<int:ttextmanageid>',views.Upload.as_view()),
+    path('upload/<int:userid>',views.Upload.as_view()),
 
 ]

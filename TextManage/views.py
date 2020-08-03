@@ -36,8 +36,8 @@ class Upload(View):
             return HttpResponse('NO')
 
 
-        ttextmanageid = request.GET.get('ttextmanageid')
-        TextMange.objects.get(ttextmanageid=ttextmanageid).delete()
-        return render(request,'upload.html',{'ttextmanageid':ttextmanageid})
+        # ttextmanageid = request.GET.get('ttextmanageid')
+        # TextMange.objects.get(ttextmanageid=ttextmanageid).delete()
+        # return render(request,'upload.html',{'ttextmanageid':ttextmanageid})
 
 
