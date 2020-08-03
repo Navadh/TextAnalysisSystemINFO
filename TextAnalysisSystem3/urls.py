@@ -28,8 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('usermanage/', include('usermanage.urls')),
     path('TextManage/', include('TextManage.urls')),
-
-
+    path('TextAnalysis/', include('TextAnalysis.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

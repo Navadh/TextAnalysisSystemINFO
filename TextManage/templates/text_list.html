@@ -3,54 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
-
-    <link rel="stylesheet" href="/Static/inc/Style.css" type="text/css">
-    <script type="text/javascript">
-        function F_Open_dialog()
-        {
-            document.getElementById("btn_file").click();
-        }
-    </script>
-
-
+    <link rel="stylesheet" href="/Static/inc/style.css" type="text/css">
 </head>
 <body>
-
-<header>
-    <table border="1px" width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center" background="/Static/images/top.jpg">
-                <p>
-                <h1>TextManage</h1>
-                </p>
-            </td>
-        </tr>
-    </table>
-
-
-</header>
-
-
-
-<table border="1px" width="100%" cellpadding="0" cellspacing="0">
-    <tr>
-        <td align="center" background="/Static/images/logintop.jpg">choose:</td>
-
-        <td align="center" background="/Static/images/logintop.jpg">
-            <form action="/TextManage/upload" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-            <input type="file" name="f1" id="btn_file" style="cursor:pointer">
-    <button >submit</button>
-
-                </form>
-        </td>
-    </tr>
-</table>
-
-
-
-
 
 
 <aside align="right">
@@ -65,7 +20,7 @@
                     <td bgcolor="#87cefa" align="center">operation</td>
                 </tr>
 
-                 {% for i in all_textmanages %}
+                {% for i in all_textmanages %}
                 <tr>
                     <td align="center">{{ i.updatetime }}</td>
                     <td align="center">{{ i.userid }}</td>
@@ -83,14 +38,12 @@
                     </td>
                 </tr>
             {% endfor %}
+             </table>
 
 
-            </table>
         </section>
     </table>
 </aside>
-
-
 
 
 

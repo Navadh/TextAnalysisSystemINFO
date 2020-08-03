@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/Static/inc/Style.css" type="text/css">
+
+</head>
+<body>
+
+
+<table border="1px" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" background="/Static/images/logintop.jpg">choose:</td>
+
+        <td align="center" background="/Static/images/logintop.jpg">
+            <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="f1" id="btn_file" style="cursor:pointer">
+    <button >submit</button>
+
+                </form>
+        </td>
+    </tr>
+</table>
+<!--action="/upload"-->
+<!--<div>-->
+<!--    <form  method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        <input type="file" name="myfile" >-->
+<!--        <input type="submit" value="submit">-->
+
+<!--    </form>-->
+<!--</div>-->
+<!-- <form enctype="multipart/form-data" action="/app01/upload/" method="POST">-->
+<!--    {% csrf_token %}-->
+<!--       <input type="file" name="upload" />-->
+<!--       <br/>-->
+<!--       <input type="submit" value="上传"/>-->
+<!--    </form>-->
+
+
+
+</body>
+</html>
