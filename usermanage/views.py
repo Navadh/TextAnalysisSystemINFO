@@ -5,7 +5,7 @@ from usermanage.models import TUser
 
 
 def indexall(request):
-    return render(request, 'usermanage/Index_1.html')
+    return render(request, 'usermanage/Index.html')
 
 
 def loginviewadmin(request):
