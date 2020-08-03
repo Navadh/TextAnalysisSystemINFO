@@ -9,7 +9,7 @@ urlpatterns = [
     path('loginuser', views.loginviewuser),
     path('<int:userid>',views.userinfoadmin),
     path('<int:userid>',views.userinfouser),
-    path('index/<int:userid>', views.indexall),
+    path('index', views.indexall),
     path('<slug:username>/<slug:userpwd>',views.logininfoadmin),
     path('<slug:username>/<slug:userpwd>',views.logininfouser),
     path('loginactionadmin', views.loginactionadmin),
@@ -21,4 +21,7 @@ urlpatterns = [
     path('reset', views.resetpass),
     path('mainadmin', views.mainadmin),
     path('mainuser', views.mainuser),
+    path('sideadmin', views.sideadmin),
+    path('sideuser', views.sideuser),
+
 ]
