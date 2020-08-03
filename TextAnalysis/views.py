@@ -12,7 +12,8 @@ def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
 
 def testfreqdata(request):
-    result = freqtable('/Users/rajeshpahari/PycharmProjects/FinalProject/media/textfile1.txt')  # result should be a string
+    result = freqtable(r”C:\Users\Adhikary Family.AdhikaryFamily\PycharmProjects\TextAnalysisSystem3\Media\textfile1.txt”)
+  # result should be a string
     print("You will see this word in the console:", result)
     return render(request, 'PassageAnalysis.html')
     #return HttpResponse(result)
