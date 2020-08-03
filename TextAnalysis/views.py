@@ -12,7 +12,7 @@ def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
 
 def testfreqdata(request):
-    result = freqtable("")
+    result = freqtable()
   # result should be a string
     print("You will see this word in the console:", result)
     return render(request, 'PassageAnalysis.html')
