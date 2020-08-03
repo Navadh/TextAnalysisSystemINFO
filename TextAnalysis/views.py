@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
+from TextAnalysis.processingscripts.WordFrequencyCalculator import FreqPlotClass
 #from usermanage.models import TUser
 
 # Create your views here.
