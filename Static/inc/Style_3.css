@@ -1,0 +1,34 @@
+.nav {
+        margin-top: 10px;
+        list-style: none;
+        padding-left: 5px;
+        text-align: right;
+        }
+        .nav li {
+        display: inline-block;
+        font-family: Georgia, Verdana, sans;
+        padding-right: 5px;
+        }
+        .nav li a:hover {
+        background-color: #198c19;
+        color: #111;
+        }
+        .nav a {
+        color: white;
+        background-color: #13a4a4;
+        text-align: center;
+        margin: 1px;
+        padding: 5px 10px;
+        border-radius: 2px;
+        text-decoration: none;
+        }
+        .Homepage {
+        font-size: 200%;
+        text-align: center;
+        color: #a52a2a;
+        }
+        .hp {
+        font-size: 150%;
+        text-align: center;
+        color: #00004c;
+        }

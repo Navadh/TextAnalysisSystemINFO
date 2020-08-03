@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title>Text Analysis System Login</title>
+      <link rel="stylesheet" href="{% static 'inc/Style_2.css' %}" type="text/css">
+  </head>
+  <body>
+      <div id="container">
+            <div id="header">
+                <h1> Text Analysis System </h1></div>
+            <div id="content">
+                <h2>User Login</h2>
+                <form action="/usermanage/loginactionuser" method="POST">
+                    {% csrf_token %}
+                        <table id="users">
+                        <tbody>
+                            <tr>
+                            <td style="width: 21.8px;" class="username" >Username:</td>
+                            <td style="width: 287.2px;"><input name="username" type="text" placeholder="username" required><br></td>
+                            </tr>
+                            <tr>
+                            <td class="password">Password:</td>
+                            <td><input name="password" type="password" placeholder="password" required><br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center"><button name="Submit" type="submit" formmethod="post" class="submit">Submit</button></td>
+                            </tr>
+                            <tr>
+                            <td colspan="2" align="center"><a href="/usermanage/reset" title="Forgot password">Forgot your password?</a></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            </form><br>
+
+        </div>
+      </div>
+    </body>
+</html>
