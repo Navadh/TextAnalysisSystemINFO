@@ -1,11 +1,14 @@
 # from django.conf.urls import url
 from django.urls import path
 from . import views
+#from .views import testfreqdata
 
 app_name ='TextAnalysis'
 
 urlpatterns = [
     path('mainpage', views.PAnalysisview),
+    path('abc', views.testfreqdata),
+
     # path('<int:userid>',views.userInfo),
     # path('<slug:username>/<slug:userpwd>',views.loginInfo),
     # path('loginaction', views.loginAction),

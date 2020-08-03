@@ -1,10 +1,22 @@
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
-from TextAnalysis.processingscripts.WordFrequencyCalculator import FreqPlotClass
+# import nltk
+# import sys
+# import codecs
+# from datascience import *
+# import numpy as np
+from TextAnalysis.processingscripts.freqplot2 import freqtable
 #from usermanage.models import TUser
 
 # Create your views here.
 def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
+
+def testfreqdata(request):
+    result = freqtable('/Users/rajeshpahari/PycharmProjects/FinalProject/media/textfile1.txt')  # result should be a string
+    print("You will see this word in the console:", result)
+    return render(request, 'PassageAnalysis.html')
+    #return HttpResponse(result)
+
 
 # def loginView(request):
 #     return render(request, 'usermanage/Login.html')
