@@ -8,5 +8,6 @@ urlpatterns = [
     path('TextManage/<int:userid>', views.TextManageView),
     path('textlist',views.textlist),
     path('upload/<int:userid>',views.Upload.as_view()),
+    path('TextManage',views.TextManageView),
 
 ]
