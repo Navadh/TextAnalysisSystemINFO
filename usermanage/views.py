@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from usermanage.models import TUser
 
 # Create your views here.
@@ -82,10 +82,14 @@ def loginactionadmin(request):
 def loginactionuser(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        userpwd = request.POST.get('userpwd')
-        print(username)
-        print(userpwd)
-        return render(request, 'usermanage/Main_U.html')
+        userpwd = request.POST.get('password')
+        ret = TUser.objects.filter(username=username, userpwd=userpwd)
+        if 0 == len(ret):
+            return HttpResponse('User does not exist!')
+        else:
+            userid = ret[0].userid
+            return render(request, 'usermanage/Main_U.html', {'userid': userid})
+
 
 
 def adduser(request):
