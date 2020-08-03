@@ -138,4 +138,4 @@ STATICFILES_DIRS = (
 X_FRAME_OPTIONS = 'ALLOWALL url'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
