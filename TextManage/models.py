@@ -1,5 +1,9 @@
 from django.db import models
 
+# import os,django
+#
+# os.environ.setdefault("DJANGO_SETTING_MODULE", "TextAnalysisSystem3.settings")
+# django.setup()
 # Create your models here.
 
 

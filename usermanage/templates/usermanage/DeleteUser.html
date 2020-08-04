@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset="UTF-8">
+        <title>Edit User</title>
+        <link rel="stylesheet" href="{% static 'inc/Style_2.css' %}" type="text/css">
+  </head>
+  <body>
+      <div id="container">
+            <div id="header">
+                <h1> Text Analysis System </h1></div>
+            <div id="content">
+                <h2>Delete User</h2>
+                <form action="/usermanage/deleteuser" method="POST" >
+                    {% csrf_token %}
+                    <table id="users">
+                        <tbody>
+                            <tr>
+                            <td style="width: 21.8px;" class="username" >Username:</td>
+                            <td style="width: 287.2px;"><input name="deleteuser" type="text" placeholder="Username" required><br></td>
+                            </tr>
+                            <tr>
+                            <td style="width: 21.8px;" class="username" >UserID:</td>
+                            <td style="width: 287.2px;"><input name="deleteuserid" type="text" placeholder="UserID" required><br></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center"><button name="Submit" type="submit" formmethod="post" class="submit">Delete</button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+
+            </form><br>
+
+        </div>
+      </div>
+    </body>
+</html>
+
+
+
+
+

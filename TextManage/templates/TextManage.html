@@ -76,11 +76,9 @@
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td align="center" >
-                                    <form action="/TextManage/TextManage/{{ ttextmanageid }}" method="post">
-                                      <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">
+                                    <form action="/TextManage/delete/{{ i.ttextmanageid }}" method="post" enctype="multipart/form-data">
+                                      <input type="submit" value="delete" name="submit"id="delete" class="btnQQ" >
                                     </form>
-
-<!--                                    <input type="button" value="delete" name="submit"id="delete" class="btnQQ" onclick="alert('Delete Confirm?');">-->
                                 </td>
                             </tr>
                         </table>
