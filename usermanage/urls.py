@@ -17,6 +17,8 @@ urlpatterns = [
     path('adduser', views.adduser),
     path('useradd', views.useradd),
     path('edituser', views.useredit),
+    path('userdelete', views.userdelete),
+    path('deleteuser', views.deleteuser),
     path('usermanage', views.usermanage),
     path('reset', views.resetpass),
     path('mainadmin', views.mainadmin),

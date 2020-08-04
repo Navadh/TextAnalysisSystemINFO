@@ -17,34 +17,24 @@
                 <table id="users">
 
                 <tr>
-                <td colspan="6"><button type="Submit" name="Submit" value="Submit" onClick="addConfirm()" class="useradd">Add User</button></td>
+                <td colspan="4"><button type="Submit" name="Submit" value="Submit" onClick="addConfirm()" class="useradd">Add User</button></td>
                 </tr>
                 <tr>
-                <th>ID</th>
+                <th>USER ID</th>
                 <th>User Name</th>
-                <th>Email Address</th>
-                <th>Telephone Number</th>
-                <th>Number of Passages</th>
-                <th>Management</th>
-
+                <th>Date & Time of Creation</th>
+		        <th>Action</th>
                 </tr>
+	{% for i in all_users %}
                 <tr>
-                <td>1</td>
-                <td>One</td>
-                <td>One@gmail.com</td>
-                <td>111-111-1111</td>
-                <td>5</td>
-                <td><button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button>&nbsp;<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button></td>
-
+                <td >{{i.userid}}</td>
+                <td >{{i.username}}</td>
+                <td >{{i.usercreatetime}}</td>
+                <td>
+				&nbsp<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button>
+		        </td>
                 </tr>
-                <tr>
-                <td>2</td>
-                <td>Two</td>
-                <td>Two@gmail.com</td>
-                <td>222-222-2222</td>
-                <td>3</td>
-                <td><button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button>&nbsp;<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button></td>
-                </tr>
+                {% endfor %}
 
                 </table>
 

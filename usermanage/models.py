@@ -1,10 +1,12 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class TUser(models.Model):
     userid = models.AutoField(primary_key=True)
     username = models.CharField(max_length=45)
     userpwd = models.CharField(max_length=45)
+    usercreatetime = models.DateTimeField(default=timezone.now)
 
     class Meta:
         db_table="TUser"
@@ -45,3 +47,15 @@ class Admin(models.Model):
 
     def __str__(self):
         return self.admin_name
+
+class MainControl(models.Model):
+    controlid = models.AutoField(primary_key=True)
+    controlname = models.CharField(max_length=45)
+    controlpwd = models.CharField(max_length=45)
+    admincreatetime = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        db_table="MainControl"
+
+    def __str__(self):
+        return self.controlname
