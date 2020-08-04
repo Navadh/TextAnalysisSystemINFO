@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirect
-from usermanage.models import TUser
+from usermanage.models import TUser, TAdmin
 
 
 

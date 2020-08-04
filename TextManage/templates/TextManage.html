@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <title>Title</title>
 
 
-    <link rel="stylesheet" href="/Static/inc/Style.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'inc/style.css' %}" type="text/css">
     <script type="text/javascript">
         function F_Open_dialog()
         {
@@ -20,7 +21,7 @@
 <header>
     <table border="1px" width="100%" cellpadding="0" cellspacing="0">
         <tr>
-            <td align="center" background="/Static/images/top.jpg">
+            <td align="center" background="{% static 'images/top.jpg' %}">
                 <p>
                 <h1>TextManage</h1>
                 </p>
@@ -35,9 +36,9 @@
 
 <table border="1px" width="100%" cellpadding="0" cellspacing="0">
     <tr>
-        <td align="center" background="/Static/images/logintop.jpg">choose:</td>
+        <td align="center" background="{% static 'images/logintop.jpg' %}">choose:</td>
 
-        <td align="center" background="/Static/images/logintop.jpg">
+        <td align="center" background="{% static 'images/logintop.jpg' %}">
             <form action="/TextManage/upload/{{userid}}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
             <input type="file" name="f1" id="btn_file" style="cursor:pointer">
