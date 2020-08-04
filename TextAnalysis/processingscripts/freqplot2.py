@@ -5,12 +5,13 @@ import sys
 import codecs
 from datascience import *
 import numpy as np
+import pandas as pd
 
-#import matplotlib
-# matplotlib.use('Agg', warn=False)
-# %matplotlib inline
-# import matplotlib.pyplot as plots
-# plots.style.use('fivethirtyeight')
+import matplotlib
+matplotlib.use('Agg', warn=False)
+#%matplotlib inline
+import matplotlib.pyplot as plots
+plots.style.use('fivethirtyeight')
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -56,6 +57,10 @@ def freqtable(input_file):
         frequencyarray = np.append(frequencyarray, fequencythistime)
 
     table1 = Table().with_columns("Word", wordarray, "frequency", frequencyarray)
+    plots.figure(figsize=(20,10))
+    table1.barh(0)
+    plots.title("Top 10 word frequency count")
 
+    plots.savefig('/Users/rajeshpahari/PycharmProjects/FinalProject/media/text1.png',bbox_inches="tight")
     #return table1
     return str(table1[0][0])

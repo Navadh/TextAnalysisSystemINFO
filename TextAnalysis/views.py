@@ -5,6 +5,9 @@ from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirec
 # from datascience import *
 # import numpy as np
 from TextAnalysis.processingscripts.freqplot2 import freqtable
+from TextAnalysisSystem3.settings import MEDIA_ROOT
+import os
+
 #from usermanage.models import TUser
 
 # Create your views here.
@@ -12,7 +15,12 @@ def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
 
 def testfreqdata(request):
-    result = freqtable("")
+    filename = os.path.join(MEDIA_ROOT,"cnnkofile.txt")
+    print(filename)
+    #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
+    result = freqtable(filename)
+    print("here comes the variable")
+    print(request.session['nonadminuser'])
   # result should be a string
     print("You will see this word in the console:", result)
     return render(request, 'PassageAnalysis.html')
