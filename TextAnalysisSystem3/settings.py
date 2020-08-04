@@ -134,6 +134,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'Static/'),
 
 )
+STATICIMAGE_DIR = os.path.join(BASE_DIR, 'Static/misc')
 
 X_FRAME_OPTIONS = 'ALLOWALL url'
 

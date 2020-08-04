@@ -4,8 +4,10 @@ from django.shortcuts import render, HttpResponseRedirect, HttpResponse, redirec
 # import codecs
 # from datascience import *
 # import numpy as np
-from TextAnalysis.processingscripts.freqplot2 import freqtable
+#from TextAnalysis.processingscripts.freqplot2 import freqtable
+from TextAnalysis.processingscripts.freqplot2speech import freqtable
 from TextAnalysisSystem3.settings import MEDIA_ROOT
+from TextAnalysisSystem3.settings import STATICFILES_DIRS
 import os
 
 #from usermanage.models import TUser
@@ -19,11 +21,11 @@ def testfreqdata(request):
     print(filename)
     #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
     result = freqtable(filename)
-    print("here comes the variable")
-    print(request.session['nonadminuser'])
+    # print("here comes the variable")
+    # print(request.session['nonadminuser'])
   # result should be a string
     print("You will see this word in the console:", result)
-    return render(request, 'PassageAnalysis.html')
+    return render(request, 'TextAnalysis2.html')
     #return HttpResponse(result)
 
 

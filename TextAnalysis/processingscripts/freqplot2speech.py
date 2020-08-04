@@ -12,6 +12,7 @@ matplotlib.use('Agg', warn=False)
 #%matplotlib inline
 import matplotlib.pyplot as plots
 plots.style.use('fivethirtyeight')
+from nltk.tag import pos_tag
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -22,6 +23,7 @@ else:
 
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger')
 from nltk.corpus import stopwords
 from TextAnalysisSystem3.settings import STATICIMAGE_DIR
 
@@ -66,4 +68,32 @@ def freqtable(input_file):
     plots.savefig(locationtosavefile,bbox_inches="tight")
     #plots.savefig('/Users/rajeshpahari/PycharmProjects/FinalProject/media/text1.png',bbox_inches="tight")
     #return table1
+
+    completewordarray = make_array()
+    completefrequencyarray = make_array()
+    for i in np.arange(len(fdist)):
+        wordthistime2 = fdist.most_common(len(fdist))[i][0]
+        fequencythistime2 = fdist.most_common(len(fdist))[i][1]
+        completewordarray = np.append(completewordarray, wordthistime2)
+        completefrequencyarray = np.append(completefrequencyarray, fequencythistime2)
+
+    table2 = Table().with_columns("Word", completewordarray, "frequency", completefrequencyarray)
+    table3 = table2.sort("frequency")
+    leastfrequentwords = table3.take(np.arange(30))[0].flatten()
+    sentence = ''
+    for i in np.arange(30):
+        sentence = sentence + ' ' + leastfrequentwords[i] + ' '
+
+    abc = nltk.pos_tag(nltk.word_tokenize(sentence))
+    dfObj = pd.DataFrame(abc)
+    dfconverted = dfObj.rename(columns={0: 'word'}).rename(columns={1: 'Part of Speech'})
+    speechtable = Table.from_df(dfconverted)
+    locationtosavefile = STATICIMAGE_DIR + "/partofspeechanalysis.csv"
+    speechtable.to_csv(locationtosavefile)
+    html = speechtable.as_html()
+    locationofhtmlfile = STATICIMAGE_DIR + "/partofspeech.html"
+    html_file = open(locationofhtmlfile, "w")
+    html_file.write(html)
+    html_file.close()
+
     return str(table1[0][0])
