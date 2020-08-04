@@ -1,3 +1,3 @@
 rm Static/misc/*.*
-rm Media/*.txt
+rm Media/*.*
 
