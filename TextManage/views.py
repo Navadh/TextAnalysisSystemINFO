@@ -3,7 +3,11 @@ from TextManage.models import TextMange
 from django.views import View
 import datetime
 from TextAnalysisSystem3.settings import MEDIA_ROOT
-import os,sys
+import os
+
+# import django
+# os.environ.setdefault("DJANGO_SETTING_MODULE", "TextAnalysisSystem3.settings")
+# django.setup()
 
 
 # Create your views here.
@@ -26,8 +30,21 @@ class Upload(View):
 
         suffix = file.name.split(".")[1]
         print("suffix: {}".format(suffix))
+        if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
+            # with open(file.name, 'wb') as f:
+            with open(os.path.join(MEDIA_ROOT,file.name),'wb') as f:
+                for i in file:
+                    try:
+                        f.write(i)
+                    except:
+                        continue
 
-        # if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
+            ret = TextMange.objects.create(pname=file.name,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
+            return HttpResponse('OK')
+        else:
+            return HttpResponse('NO')
+
+# if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
         #     # with open(file.name, 'wb') as f:
         #     with open(os.path.join(MEDIA_ROOT,file.name),'wb') as f:
         #         for i in file:
@@ -38,21 +55,27 @@ class Upload(View):
         # else:
         #     return HttpResponse('NO')
 
+class text_del(View):
+    def get(self, request):
+        return render(request, 'TextManage.html')
 
-        if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
-            # with open(file.name, 'wb') as f:
-            with open(os.path.join(MEDIA_ROOT,file.name),'wb') as f:
-                for i in file:
-                    try:
-                        f.write(i)
-                    except:
-                        continue
+    def post(self, request,ttextmanageid):
+        TextMange.objects.filter(ttextmanageid=ttextmanageid).delete()
+        all_textmanages = TextMange.objects.all()
+        return render(request, 'TextManage.html', {'all_textmanages': all_textmanages})
 
 
-            ret = TextMange.objects.create(pname=file.name,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
-            return HttpResponse('OK')
-        else:
-            return HttpResponse('NO')
+
+
+
+# def text_del(request):
+#     submit = request.GEt.get('submit')
+#     deltid=TextMange.objects.filter(ttextmanage=ttextmanage).delete()
+#     return render(request,'TextManage.html',{'deltid':deltid})
+
+
+
+
 
 
 
