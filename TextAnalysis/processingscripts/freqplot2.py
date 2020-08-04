@@ -5,6 +5,7 @@ import sys
 import codecs
 from datascience import *
 import numpy as np
+import pandas as pd
 
 import matplotlib
 matplotlib.use('Agg', warn=False)
