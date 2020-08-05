@@ -20,7 +20,7 @@ urlpatterns = [
     path('edituser', views.useredit),
     path('useredit', views.editeuser),
     path('userdelete', views.userdelete),
-    path('delete/<int:userid>', views.user_del.as_view()),
+    # path('delete/<int:userid>', views.user_del.as_view()),
     path('deleteuser', views.deleteuser),
     path('usermanage', views.usermanage),
     path('reset', views.resetpass),

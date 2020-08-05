@@ -30,8 +30,9 @@
                 <td >{{i.userid}}</td>
                 <td >{{i.username}}</td>
                 <td >{{i.usercreatetime}}</td>
-                <td>
-				&nbsp<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button>
+                    <td>&nbsp<button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button>
+                        &nbsp<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button>
+
 		        </td>
                 </tr>
                 {% endfor %}
