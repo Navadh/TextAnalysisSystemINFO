@@ -72,14 +72,14 @@ body {
         #users .edituser {
             color: white;
             background-color: #A899AE;
-            padding: 5px;
+            padding: 2px;
             border-radius: 2px;
             text-decoration: none;
             }
         #users .deleteuser {
             color: white;
             background-color: #cc0000;
-            padding: 5px;
+            padding: 2px;
             border-radius: 2px;
             text-decoration: none;
             }
