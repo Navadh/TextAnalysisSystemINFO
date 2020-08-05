@@ -22,15 +22,18 @@
                 <tr>
                 <th style="width:15%">USER ID</th>
                 <th style="width:25%">User Name</th>
-                <th style="width:35%">Date & Time of Creation</th>
-		        <th style="width:25%">Actions</th>
+                <th style="width:30%">Date & Time of Creation</th>
+		        <th style="width:15%">Edit</th>
+                    <th style="width:15%">Delete</th>
+
                 </tr>
 	{% for i in all_users %}
                 <tr>
                 <td >{{i.userid}}</td>
                 <td >{{i.username}}</td>
                 <td >{{i.usercreatetime}}</td>
-                    <td>&nbsp;<button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button><form action="/usermanage/delete/{{ i.userid }}" method="post" enctype="multipart/form-data">
+                    <td>&nbsp;<button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button></td>
+                    <td><form action="/usermanage/delete/{{ i.userid }}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <button type="submit" style="cursor:move;" value="Delete User" name="submit" class="deleteuser">Delete User</button>&nbsp;
                         </form>
