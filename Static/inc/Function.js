@@ -24,11 +24,9 @@ function delConfirm() {
             var con=confirm("This action cannot be reversed, are you sure to delete it?");
                 if (con==true)
                     {
-                    alert('Done!');
+                    window.open(url="/usermanage/userdelete", "main");
                     }
                 else
                     alert('No!');
 
             }
-
-
