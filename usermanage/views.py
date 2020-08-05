@@ -67,16 +67,16 @@ def userinfouser(request, userid):
     return render(request, 'usermanage/Login_U.html')
 
 
-def logininfoadmin(request, tadmin_name, tadmin_pwd):
-    print('tadmin_name: ', tadmin_name)
-    print('tadmin_pwd: ', tadmin_pwd)
-    return render(request, 'usermanage/Login_A.html')
-
-
-def logininfouser(request, username, userpwd):
-    print('username: ', username)
-    print('userpwd: ', userpwd)
-    return render(request, 'usermanage/Login_U.html')
+# def logininfoadmin(request, tadmin_name, tadmin_pwd):
+#     print('tadmin_name: ', tadmin_name)
+#     print('tadmin_pwd: ', tadmin_pwd)
+#     return render(request, 'usermanage/Login_A.html')
+#
+#
+# def logininfouser(request, username, userpwd):
+#     print('username: ', username)
+#     print('userpwd: ', userpwd)
+#     return render(request, 'usermanage/Login_U.html')
 
 
 def loginactionadmin(request):
@@ -143,11 +143,14 @@ def editeuser(request):
         edit_user2.save()
         return HttpResponse('User modified!')
 
-# class user_del(View):
-#     def get(self, request):
-#         return render(request, 'usermanage/UserManagePage.html')
-#
-#     def post(self, request, userid):
-#         TUser.objects.filter(userid=userid).delete()
-#         all_users = TUser.objects.all()
-#         return render(request, 'usermanage/UserManagePage.html', {'all_users': all_userss})
+class user_del(View):
+    def get(self, request):
+        return render(request, 'usermanage/UserManagePage.html')
+
+    def post(self, request, userid):
+        TUser.objects.filter(userid=userid).delete()
+        all_users = TUser.objects.all()
+        return render(request, 'usermanage/UserManagePage.html', {'all_users': all_users})
+
+
+
