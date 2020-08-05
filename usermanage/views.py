@@ -55,6 +55,10 @@ def sideuser(request):
     # user = request.session['nonadminuser']
     return render(request, 'usermanage/Sideframe_U.html')
 
+# def sideuser(request, username):
+#     # user = request.session['nonadminuser']
+#     return render(request, 'usermanage/Sideframe_U.html', {'username': username})
+
 
 
 def userinfoadmin(request, tadmin_id):

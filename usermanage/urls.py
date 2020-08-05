@@ -30,5 +30,6 @@ urlpatterns = [
     path('mainuser', views.mainuser),
     path('sideadmin', views.sideadmin),
     path('sideuser', views.sideuser),
+    # path('sideuserload/<slug:username>', views.sideuser),
 
 ]
