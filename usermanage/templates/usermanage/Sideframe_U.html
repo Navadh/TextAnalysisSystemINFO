@@ -18,13 +18,13 @@
                   <td >
                     <form action="/TextManage/TextManage/1" target="main">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
                   </td></tr>
                 <tr>
                   <td >
                     <form action="/TextAnalysis/abc" target="main">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
 
                   </td>
                 </tr>
@@ -32,7 +32,7 @@
                 <td colspan="2" >
                     <form action="/usermanage/index" target="_blank">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
                 </td>
                 </tr>
               </tbody>
