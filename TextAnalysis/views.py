@@ -9,6 +9,8 @@ from TextAnalysis.processingscripts.freqplot2speech import freqtable
 from TextAnalysisSystem3.settings import MEDIA_ROOT
 from TextAnalysisSystem3.settings import STATICFILES_DIRS
 import os
+from django.views import View
+from TextAnalysis.models import WFreq
 
 #from usermanage.models import TUser
 
@@ -27,6 +29,14 @@ def testfreqdata(request):
     print("You will see this word in the console:", result)
     return render(request, 'TextAnalysis2.html')
     #return HttpResponse(result)
+
+
+class textanalysis(View):
+    def get(self,request):
+        return render(request,'PassageAnalysis.html')
+    def post(self,request):
+        all_textanalysis= WFreq.objects.all()
+        return render(request,'PassageAnalysis.html',{'all_textanalysis':all_textanalysis})
 
 
 # def loginView(request):

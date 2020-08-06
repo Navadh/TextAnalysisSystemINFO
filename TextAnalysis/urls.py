@@ -9,6 +9,8 @@ urlpatterns = [
     path('mainpage', views.PAnalysisview),
     path('abc', views.testfreqdata),
 
+    path('textanlysis',views.textanalysis.as_view()),
+
 
     # path('<int:userid>',views.userInfo),
     # path('<slug:username>/<slug:userpwd>',views.loginInfo),
