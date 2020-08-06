@@ -81,20 +81,26 @@ class textanalysis(View):
         all_textanalysis= WFreq.objects.all()
         return render(request,'PassageAnalysis.html',{'all_textanalysis':all_textanalysis})
 
-def testfreqdata(request):
-    if request.session.has_key('pname'):
-        pname = request.session['pname']
-        print(type(pname))
-        filename = os.path.join(MEDIA_ROOT, pname)
-    # print(filename)
+def testfreqdata(request,pname):
+    # if request.session.has_key('pname'):
+    # # print(request.session)
+    #
+    #     pname = request.session['pname']
+        # print(type(pname))
+    if request.method == 'POST':
+        ret = TextMange.objects.filter(pname=pname)
+        pname = ret[0].pname
+
+    filename = os.path.join(MEDIA_ROOT, pname)
+    print(filename)
 
     #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
-        result = freqtable(filename)
+    result = freqtable(filename)
     # print("here comes the variable")
     # print(request.session['nonadminuser'])
   # result should be a string
-        print("You will see this word in the console:", result)
-    return render(request, 'TextAnalysis2.html')
+    print("You will see this word in the console:", result)
+    return render(request, 'TextAnalysis2.html', {'pname':pname})
     #return HttpResponse(result)
 
 
