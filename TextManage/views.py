@@ -5,6 +5,7 @@ import datetime
 from TextAnalysisSystem3.settings import MEDIA_ROOT
 import os
 
+
 # import django
 # os.environ.setdefault("DJANGO_SETTING_MODULE", "TextAnalysisSystem3.settings")
 # django.setup()
@@ -64,14 +65,15 @@ class text_del(View):
         all_textmanages = TextMange.objects.all()
         return render(request, 'TextManage.html', {'all_textmanages': all_textmanages})
 
+class textanalysis(View):
+    def get(self,request):
+        return render(request,'PassageAnalysis.html')
+    def post(self,request):
+        all_textanalysis= WFreq.objects.all()
+        return render(request,'PassageAnalysis.html',{'all_textanalysis':all_textanalysis})
 
 
 
-
-# def text_del(request):
-#     submit = request.GEt.get('submit')
-#     deltid=TextMange.objects.filter(ttextmanage=ttextmanage).delete()
-#     return render(request,'TextManage.html',{'deltid':deltid})
 
 
 
