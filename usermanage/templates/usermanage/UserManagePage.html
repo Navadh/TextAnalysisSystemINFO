@@ -17,21 +17,31 @@
                 <table id="users">
 
                 <tr>
-                <td colspan="4"><button type="Submit" name="Submit" value="Submit" onClick="addConfirm()" class="useradd">Add User</button></td>
+                <td colspan="4"><button type="Submit" style="cursor:pointer;" name="Submit" value="Submit" onClick="addConfirm()" class="useradd">Add User</button></td>
                 </tr>
                 <tr>
-                <th>USER ID</th>
-                <th>User Name</th>
-                <th>Date & Time of Creation</th>
-		        <th>Action</th>
+                <th style="width:15%">USER ID</th>
+                <th style="width:25%">User Name</th>
+                <th style="width:30%">Date & Time of Creation</th>
+		        <th style="width:15%">Edit</th>
+                    <th style="width:15%">Delete</th>
+
                 </tr>
 	{% for i in all_users %}
                 <tr>
                 <td >{{i.userid}}</td>
                 <td >{{i.username}}</td>
                 <td >{{i.usercreatetime}}</td>
-                <td>
-				&nbsp<button style="cursor:pointer;" onClick="delConfirm()" class="deleteuser">Delete User</button>
+                    <td><form action="/usermanage/edit/{{ i.userid }}/{{ i.username }}/{{ i.userpwd }}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <button type = "submit" style="cursor:pointer;" value="Edit User" class="edituser">Edit User</button>
+                    </form>
+                    </td>
+                    <td><form action="/usermanage/delete/{{ i.userid }}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <button type="submit" style="cursor:pointer;" value="Delete User" name="submit" class="deleteuser">Delete User</button>&nbsp;
+                        </form>
+
 		        </td>
                 </tr>
                 {% endfor %}

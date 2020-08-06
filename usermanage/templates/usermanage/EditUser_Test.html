@@ -12,7 +12,7 @@
                 <h1> Text Analysis System </h1></div>
             <div id="content">
                 <h2>Add User</h2>
-                <form method="POST" action="/usermanage/adduser">
+                <form method="POST" action="/usermanage/testing">
                     {% csrf_token %}
                     <table border="0" cellpadding="0" cellspacing="0" style="position:absolute;display:none;z-index:2000;">
                     <tr>
@@ -31,8 +31,15 @@
                         </tr>
                         <tr>
                         <td  style="width: 21.8px; background-color: #aecadc; text-align: right; color: dimgray;" class="addpwd">Add Password:</td>
-                        <td width="80%"><input name="addpassword" type="password" id="addpassword" placeholder="password"  value="" required>&nbsp;<input style="cursor:pointer;" name="button2" type="submit" id="button2" value="Submit" class="submit"> </td>
+                        <td width="80%"><input name="addpassword" type="password" id="addpassword" placeholder="password"  value="" required>&nbsp; </td>
                         </tr>
+                        <tr>
+                        <td  style="width: 21.8px;" class="adduser">Admin:</td>
+                        <td width="80%"><input rel="active" name="admin" type="checkbox" id="admin" value="" ></td>
+                        </tr>
+                        <tr>
+                                <td colspan="2" align="center"><button name="Submit" type="submit" formmethod="post" class="submit">Submit</button></td>
+                            </tr>
                         </tbody>
 
 

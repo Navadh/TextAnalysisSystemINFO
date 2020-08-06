@@ -78,7 +78,14 @@
                                 <td align="center" >
                                     <form action="/TextManage/delete/{{ i.ttextmanageid }}" method="post" enctype="multipart/form-data">
                                       <input type="submit" value="delete" name="submit"id="delete" class="btnQQ" >
+<!--                                        <input type="submit" value="textanlysis" name="submit"id="textanlysis" class="btnQQ" >-->
                                     </form>
+                                    <form action="/TextManage/abc" method="post"  >
+                                        {% csrf_token %}
+                                        <input type="submit" value="textanlysis" name="submit"id="textanlysis" class="btnQQ" >
+                                    </form>
+
+
                                 </td>
                             </tr>
                         </table>

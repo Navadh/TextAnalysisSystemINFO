@@ -8,9 +8,9 @@
   </head>
   <body>
   <div>
-      <div>
-        <h2>Welcome, {{user|title}}!</h2>
-      </div>
+<!--      <div>-->
+<!--        <h2>Welcome, {{controlname|title}}!</h2>-->
+<!--      </div>-->
     </div>
     <table class="indextab" >
               <tbody>
@@ -18,13 +18,27 @@
                   <td >
                     <form action="/usermanage/usermanage" target="main">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="button_um">User Management</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_um">User Management</button></form>
                   </td></tr>
+                <tr>
+                    <td >
+                    <form action="/TextManage/TextManage/{{controlid}}" target="main">
+                      {% csrf_token %}
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
+                  </td></tr>
+                <tr>
+                  <td >
+                    <form action="/TextAnalysis/abc" target="main">
+                      {% csrf_token %}
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
+
+                  </td>
+                </tr>
                 <tr>
                     <td colspan="2" >
                         <form action="/usermanage/index" target="_blank">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
                 </td>
                 </tr>
               </tbody>

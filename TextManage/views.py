@@ -4,6 +4,10 @@ from django.views import View
 import datetime
 from TextAnalysisSystem3.settings import MEDIA_ROOT
 import os
+from TextAnalysis.models import WFreq
+from TextAnalysis.processingscripts.freqplot2speech import freqtable
+
+
 
 # import django
 # os.environ.setdefault("DJANGO_SETTING_MODULE", "TextAnalysisSystem3.settings")
@@ -14,6 +18,10 @@ import os
 def TextManageView(request,userid):
     all_textmanages = TextMange.objects.all()
     return render(request,'TextManage.html',{'all_textmanages': all_textmanages,'userid':userid})
+
+def TextManage(request):
+    # all_textmanages = TextMange.objects.all()
+    return render(request,'TextManage.html')
 
 def textlist(request):
     all_textmanages =TextMange.objects.all()
@@ -30,7 +38,7 @@ class Upload(View):
 
         suffix = file.name.split(".")[1]
         print("suffix: {}".format(suffix))
-        if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
+        if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix or 'txt' == suffix:
             # with open(file.name, 'wb') as f:
             with open(os.path.join(MEDIA_ROOT,file.name),'wb') as f:
                 for i in file:
@@ -40,6 +48,8 @@ class Upload(View):
                         continue
 
             ret = TextMange.objects.create(pname=file.name,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
+            pname = ret[0].pname
+            request.session['pname'] = pname
             return HttpResponse('OK')
         else:
             return HttpResponse('NO')
@@ -64,14 +74,29 @@ class text_del(View):
         all_textmanages = TextMange.objects.all()
         return render(request, 'TextManage.html', {'all_textmanages': all_textmanages})
 
+class textanalysis(View):
+    def get(self,request):
+        return render(request,'PassageAnalysis.html')
+    def post(self,request):
+        all_textanalysis= WFreq.objects.all()
+        return render(request,'PassageAnalysis.html',{'all_textanalysis':all_textanalysis})
 
+def testfreqdata(request):
+    if request.session.has_key('pname'):
+        pname = request.session['pname']
+        print(type(pname))
+        filename = os.path.join(MEDIA_ROOT, pname)
+    # print(filename)
 
+    #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
+        result = freqtable(filename)
+    # print("here comes the variable")
+    # print(request.session['nonadminuser'])
+  # result should be a string
+        print("You will see this word in the console:", result)
+    return render(request, 'TextAnalysis2.html')
+    #return HttpResponse(result)
 
-
-# def text_del(request):
-#     submit = request.GEt.get('submit')
-#     deltid=TextMange.objects.filter(ttextmanage=ttextmanage).delete()
-#     return render(request,'TextManage.html',{'deltid':deltid})
 
 
 

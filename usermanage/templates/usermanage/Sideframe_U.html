@@ -8,31 +8,30 @@
   </head>
   <body>
     <div>
-      <div>
-        <h2>Welcome, {{user|title}}!</h2>
-      </div>
+<!--      <div>-->
+<!--        <h2>Welcome, {{username|title}}!</h2>-->
+<!--      </div>-->
     </div>
     <table class="indextab" >
               <tbody>
                 <tr>
                   <td >
-                    <form action="/TextManage/TextManage/1" target="main">
+                    <form action="/TextManage/TextManage/{{userid}}" target="main">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
                   </td></tr>
                 <tr>
                   <td >
                     <form action="/TextAnalysis/abc" target="main">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
-
-                  </td>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
+                    </td>
                 </tr>
                 <tr>
                 <td colspan="2" >
                     <form action="/usermanage/index" target="_blank">
                       {% csrf_token %}
-                      <button name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
+                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="logout">Logout</button></form>
                 </td>
                 </tr>
               </tbody>
