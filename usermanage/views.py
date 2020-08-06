@@ -102,17 +102,11 @@ def loginactionuser(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         userpwd = request.POST.get('password')
-        # controlname = request.POST.get('username')
-        # controlpwd = request.POST.get('password')
         ret = TUser.objects.filter(username=username, userpwd=userpwd)
-        # ret2 = MainControl.objects.filter(controlname=controlname, controlpwd=controlpwd)
+
         if 0 ==len(ret):
             return HttpResponse('Either the username or password is not matching or the user does not exist!')
-            # if 0 ==len(ret2):
-            #     return HttpResponse('Either the Admin name or password is not matching or the Admin user does not exist!')
-            # else:
-            #     controlid = ret2[0].controlid
-            #     return render(request, 'usermanage/Main_A.html', {'controlid': controlid})
+
         else:
             userid = ret[0].userid
             return render(request, 'usermanage/Main_U.html', {'userid': userid})
@@ -184,7 +178,7 @@ class user_edit(View):
 #         new_user = TAdmin()
 #         new_user.tadmin_name = request.POST.get('addusername')
 #         new_user.tadmin_pwd = request.POST.get('addpassword')
-#         new_user.is_admin = request.POST.getlist('admin')
+#         new_user.is_admin = request.POST.get('admin')
 #         new_user.save()
 #         return HttpResponse('New User created!')
 
