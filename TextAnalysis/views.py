@@ -11,6 +11,7 @@ from TextAnalysisSystem3.settings import STATICFILES_DIRS
 import os
 from django.views import View
 from TextAnalysis.models import WFreq
+import TextManage.views
 
 #from usermanage.models import TUser
 
@@ -19,15 +20,27 @@ def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
 
 def testfreqdata(request):
-    filename = os.path.join(MEDIA_ROOT,"cnnkofile.txt")
-    print(filename)
+    # filename = os.path.join(MEDIA_ROOT,"cnnkofile.txt")
+    # def post(self, request, pname):
+    #     # TUser.objects.filter(userid=userid).delete()
+    #     ret = TextMange.objects.filter(pname=pname)
+    #     pname = ret[0].pname
+    if request.session.has_key('pname'):
+        pname = request.session['pname']
+    # ret = TextMange.objects.filter(pname=pname)
+    # pname = ret[0].pname
+
+    # print(pname)
+    filename = os.path.join(MEDIA_ROOT, {'pname': pname})
+    # print(filename)
+
     #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
     result = freqtable(filename)
     # print("here comes the variable")
     # print(request.session['nonadminuser'])
   # result should be a string
     print("You will see this word in the console:", result)
-    return render(request, 'TextAnalysis2.html')
+    return render(request, 'TextAnalysis2.html', {'pname': pname})
     #return HttpResponse(result)
 
 
@@ -89,3 +102,15 @@ class textanalysis(View):
 #         new_user.username = request.POST.get('addusername')
 #         new_user.userpwd = request.POST.get('addpassword')
 #         new_user.save()
+class user_analysis(View):
+    def get(self, request):
+        return render(request, 'TextAnalysis2.html')
+
+    def post(self, request, pname):
+        # TUser.objects.filter(userid=userid).delete()
+        ret = TTextManage.objects.filter(pname=pname)
+        pname = ret[0].pname
+        # username = ret[0].username
+        # userpwd = ret[0].userpwd
+        # all_users = TUser.objects.all()
+        return render(request, 'TextAnalysis2.html', {'pname': pname})

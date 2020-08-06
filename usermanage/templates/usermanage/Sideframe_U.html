@@ -9,7 +9,7 @@
   <body>
     <div>
 <!--      <div>-->
-<!--        <h2>Welcome, {{user|title}}!</h2>-->
+<!--        <h2>Welcome, {{username|title}}!</h2>-->
 <!--      </div>-->
     </div>
     <table class="indextab" >
@@ -25,8 +25,7 @@
                     <form action="/TextAnalysis/abc" target="main">
                       {% csrf_token %}
                       <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
-
-                  </td>
+                    </td>
                 </tr>
                 <tr>
                 <td colspan="2" >
