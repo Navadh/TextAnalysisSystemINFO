@@ -25,21 +25,24 @@
                     </table>
                     <table id="users">
                         <tbody>
+
                         <tr>
                             <td style="width: 21.8px;" class="username" >UserID:</td>
-                            <td style="width: 287.2px;"><input name="userid" type="text" placeholder="UserID" required><br></td>
+                            <td style="width: 287.2px;"><input name="userid" type="text" value="{{userid}}" required><br></td>
                             </tr>
                         <tr >
                         <td style="width: 21.8px;" class="oldusername" >Old Username:</td>
-                        <td width="80%"><input name="oldusername" type="text" id="oldusername" placeholder="old username" value="" required></tr>
+                        <td width="80%"><input name="oldusername" type="text" id="oldusername"  value="{{username}}" required></tr>
                         <tr>
                         <td  style="width: 21.8px;" class="newusername">New Username:</td>
                         <td width="80%"><input name="newusername" type="text" id="newusername" placeholder="new username" value="" required></td>
                         </tr>
                         <tr>
                         <td  style="width: 21.8px; background-color: #aecadc; text-align: right; color: dimgray;" class="addpwd">Add Password:</td>
-                        <td width="80%"><input name="password" type="password" id="editpassword" placeholder="password"  value="" required>&nbsp;<input name="button2" type="submit" id="button2" value="Submit" class="submit"> </td>
+                        <td width="80%"><input name="password" type="password" id="editpassword"   value="{{userpwd}}" required>&nbsp;<input name="button2" type="submit" id="button2" value="Submit" class="submit"> </td>
                         </tr>
+
+
                         </tbody>
                     </table>
 

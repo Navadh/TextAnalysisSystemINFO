@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from usermanage.models import TUser, MainControl
+from usermanage.models import TUser, MainControl, TAdmin
 from django.views import View
 # from django.contrib.auth.decorators import login_required
 
@@ -55,6 +55,10 @@ def sideuser(request):
     # user = request.session['nonadminuser']
     return render(request, 'usermanage/Sideframe_U.html')
 
+# def sideuser(request, username):
+#     # user = request.session['nonadminuser']
+#     return render(request, 'usermanage/Sideframe_U.html', {'username': username})
+
 
 
 def userinfoadmin(request, tadmin_id):
@@ -89,8 +93,8 @@ def loginactionadmin(request):
         if 0 == len(ret):
             return HttpResponse('Either the Admin name or password is not matching or the Admin user does not exist!')
         else:
-            controlid = ret[0].controlid
-            return render(request, 'usermanage/Main_A.html')
+            controlname = ret[0].controlname
+            return render(request, 'usermanage/Main_A.html', {'controlname': controlname})
 
 
 
@@ -120,7 +124,7 @@ def adduser(request):
         new_user.username = request.POST.get('addusername')
         new_user.userpwd = request.POST.get('addpassword')
         new_user.save()
-        return HttpResponse('New User created!')
+    return HttpResponse('New User created!')
 
 
 def deleteuser(request):
@@ -143,6 +147,16 @@ def editeuser(request):
         edit_user2.save()
         return HttpResponse('User modified!')
 
+# def editeuser(request):
+#     if request.method == 'POST':
+#         edit_user = TUser()
+#         edit_user.userid = request.POST.get('userid')
+#         edit_user.username = request.POST.get('oldusername')
+#         edit_user.username = request.POST.get('newusername')
+#         edit_user.userpwd = request.POST.get('password')
+#         edit_user.update()
+#         return HttpResponse('User modified!')
+
 class user_del(View):
     def get(self, request):
         return render(request, 'usermanage/UserManagePage.html')
@@ -152,5 +166,25 @@ class user_del(View):
         all_users = TUser.objects.all()
         return render(request, 'usermanage/UserManagePage.html', {'all_users': all_users})
 
+class user_edit(View):
+    def get(self, request):
+        return render(request, 'usermanage/UserManagePage.html')
 
+    def post(self, request, userid, username, userpwd):
+        # TUser.objects.filter(userid=userid).delete()
+        ret = TUser.objects.filter(userid=userid, username=username, userpwd=userpwd)
+        userid = ret[0].userid
+        username = ret[0].username
+        userpwd = ret[0].userpwd
+        # all_users = TUser.objects.all()
+        return render(request, 'usermanage/EditUser.html', {'userid': userid, 'username': username, 'userpwd': userpwd})
+
+# def testing(request):
+#     if request.method == 'POST':
+#         new_user = TAdmin()
+#         new_user.tadmin_name = request.POST.get('addusername')
+#         new_user.tadmin_pwd = request.POST.get('addpassword')
+#         new_user.is_admin = request.POST.getlist('admin')
+#         new_user.save()
+#         return HttpResponse('New User created!')
 

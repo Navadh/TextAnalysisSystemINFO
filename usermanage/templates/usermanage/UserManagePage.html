@@ -32,10 +32,14 @@
                 <td >{{i.userid}}</td>
                 <td >{{i.username}}</td>
                 <td >{{i.usercreatetime}}</td>
-                    <td>&nbsp;<button style="cursor:pointer;" onClick="editConfirm()" class="edituser">Edit User</button></td>
+                    <td><form action="/usermanage/edit/{{ i.userid }}/{{ i.username }}/{{ i.userpwd }}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <button type = "submit" style="cursor:pointer;" value="Edit User" class="edituser">Edit User</button>
+                    </form>
+                    </td>
                     <td><form action="/usermanage/delete/{{ i.userid }}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <button type="submit" style="cursor:move;" value="Delete User" name="submit" class="deleteuser">Delete User</button>&nbsp;
+                            <button type="submit" style="cursor:pointer;" value="Delete User" name="submit" class="deleteuser">Delete User</button>&nbsp;
                         </form>
 
 		        </td>
