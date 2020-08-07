@@ -25,6 +25,7 @@ class Upload(View):
     def post(self, request,userid):
         file = request.FILES.get('f1')
         suffix = file.name.split(".")[1]
+        pname = file.name.split(".")[0]
         print("suffix: {}".format(suffix))
         if 'pdf' == suffix or 'docx' == suffix or 'doc' == suffix:
             # with open(file.name, 'wb') as f:
@@ -35,7 +36,7 @@ class Upload(View):
                     except:
                         continue
 
-            ret = TextMange.objects.create(pname=file.name,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
+            ret = TextMange.objects.create(pname=pname,ptype=suffix,userid=userid,updatetime=datetime.datetime.now())
             return HttpResponse('OK')
         else:
             return HttpResponse('NO')

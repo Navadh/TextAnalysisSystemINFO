@@ -19,19 +19,19 @@ import TextManage.views
 def PAnalysisview(request):
     return render(request, 'PassageAnalysis.html')
 
-def testfreqdata(request):
+def testfreqdata(request,pname):
     # filename = os.path.join(MEDIA_ROOT,"cnnkofile.txt")
     # def post(self, request, pname):
     #     # TUser.objects.filter(userid=userid).delete()
     #     ret = TextMange.objects.filter(pname=pname)
     #     pname = ret[0].pname
-    if request.session.has_key('pname'):
-        pname = request.session['pname']
+    # if request.session.has_key('pname'):
+    #     pname = request.session['pname']
     # ret = TextMange.objects.filter(pname=pname)
     # pname = ret[0].pname
 
     # print(pname)
-    filename = os.path.join(MEDIA_ROOT, {'pname': pname})
+    filename = os.path.join(MEDIA_ROOT, {'pname': pname+'.docx'})
     # print(filename)
 
     #result = freqtable("/Users/rajeshpahari/PycharmProjects/FinalProject/Media/textfile1.txt")
