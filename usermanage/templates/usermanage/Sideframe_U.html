@@ -9,7 +9,7 @@
   <body>
     <div>
 <!--      <div>-->
-<!--        <h2>Welcome, {{user|title}}!</h2>-->
+<!--        <h2>Welcome, {{username|title}}!</h2>-->
 <!--      </div>-->
     </div>
     <table class="indextab" >
@@ -20,14 +20,13 @@
                       {% csrf_token %}
                       <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_tm">Text Management</button></form>
                   </td></tr>
-                <tr>
-                  <td >
-                    <form action="/TextAnalysis/abc" target="main">
-                      {% csrf_token %}
-                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>
-
-                  </td>
-                </tr>
+<!--                <tr>-->
+<!--                  <td >-->
+<!--                    <form action="/TextAnalysis/abc" target="main">-->
+<!--                      {% csrf_token %}-->
+<!--                      <button style="cursor:pointer;" name="Submit" type="submit" formmethod="post" class="button_ta">Text Analysis</button></form>-->
+<!--                    </td>-->
+<!--                </tr>-->
                 <tr>
                 <td colspan="2" >
                     <form action="/usermanage/index" target="_blank">

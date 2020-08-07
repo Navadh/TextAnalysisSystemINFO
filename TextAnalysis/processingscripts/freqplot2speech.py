@@ -8,7 +8,8 @@ import numpy as np
 import pandas as pd
 import os
 import matplotlib
-matplotlib.use('Agg', warn=False)
+# matplotlib.use('Agg', warn=False)
+matplotlib.use('agg')
 #%matplotlib inline
 import matplotlib.pyplot as plots
 plots.style.use('fivethirtyeight')

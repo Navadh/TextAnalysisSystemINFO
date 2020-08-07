@@ -8,7 +8,8 @@ app_name ='TextAnalysis'
 urlpatterns = [
     path('mainpage', views.PAnalysisview),
     path('abc', views.testfreqdata),
-
+    # path('analysis/<slug:pyname>', views.user_analysis.as_view()),
+    # path('abc/<slug:pname>', views.testfreqdata),
     path('textanlysis',views.textanalysis.as_view()),
 
 
