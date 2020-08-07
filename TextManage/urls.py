@@ -10,5 +10,5 @@ urlpatterns = [
     path('upload/<int:userid>',views.Upload.as_view()),
     path ('TextManage', views.TextManageView),
     path('delete/<int:ttextmanageid>',views.text_del.as_view()),
-    path('textanlysis',views.textanalysis.as_view()),
+    path('textanlysis',views.textanalysis),
 ]
